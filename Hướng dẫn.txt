@@ -1,0 +1,11 @@
+Đặt tên biên
+
+BTN_	Button	BTN_SUBMIT, BTN_LOGIN
+TXT_	Input/text field or label	TXT_USERNAME, TXT_HEADER
+FORM_	Form hoặc khối tổng hợp	FORM_LOGIN, FORM_OTP
+MSG_	Message hoặc validation	MSG_ERROR_PASSWORD
+LINK_	Liên kết (a tag)	LINK_FORGOT_PASSWORD
+ICON_	Icon hoặc SVG biểu tượng	ICON_EYE_TOGGLE_PASSWORD
+IMG_	Ảnh hoặc hình minh họa	IMG_BANNER_MAIN
+LBL_	Label hoặc thẻ định danh	LBL_PHONE_NUMBER
+TAB_	Tab hiển thị	TAB_ACCOUNT_INFO
