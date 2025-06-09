@@ -30,7 +30,7 @@ public class HomePageLocator {
     public static final String TXT_HOTLINE_PHONENUMBER_HEADER_MIDDLE = "//span[@class='shrink-0 whitespace-nowrap']//span[text()='1800 6821']";
     
     public static final String TXT_BIZ_HEADER_MIDDLE = "//p[@title='Doanh nghiệp']";
-    public static final String TXT_HOTDEAL_HEADER_MIDDLE = "//p[@title='Deal hot tháng 5 🔥']";
+    public static final String TXT_HOTDEAL_HEADER_MIDDLE = "//p[contains(@title,'Deal hot tháng')]";
     public static final String TXT_ORDER_RESEARCH_HEADER_MIDDLE = "//p[@title='Tra cứu đơn hàng']";
     public static final String TXT_HEALTH_HEADER_MIDDLE = "//p[@title='Góc sức khỏe']";
     public static final String TXT_MEDICAL_SYSTEM_HEADER_MIDDLE = "//p[@title='Hệ thống nhà thuốc']";
@@ -121,7 +121,17 @@ public class HomePageLocator {
     public static final String BTN_MORE_SEASONAL_DISEASE = "//h4[text()='Nhóm bệnh theo mùa']//ancestor::div[@class='container py-4']//a[text()='Xem thêm']";
     
     //"Góc sức khỏe" page
-    public static final String TXT_SEASONAL_DISEASE = "//div[@class='container py-4']//h4[text()='Nhóm bệnh theo mùa']";
+    public static final String ATR_HEALTH_BLOG = "//h4[text()='Góc sức khỏe']//ancestor::div[@class='md:container']";
+    public static final String TXT_HEALTH_BLOG = "//div[@class='md:container']//h4[text()='Góc sức khỏe']";
+    public static final String LIST_MENU_HEALTH_BLOG = "//div[@class='mb-4']//div[contains(@class,'swiper-slide')]//span";
+    public static final String LIST_NEWS_HEALTH_BLOG = "//h4[text()='Góc sức khỏe']//ancestor::div[@class='md:container']//div[@class='first:row-span-3 first:mb-3 md:block']";
+    public static final String BTN_MORE_HEALTH_BLOG = "//h4[text()='Góc sức khỏe']//ancestor::div[@class='md:container']//a[text()='Xem tất cả']";
+
+    // "Chuỗi nhà thuốc uy tín hàng đầu Việt Nam"
+    public static final String TXT_TITLE_OVERVIEW = "//b[text()='Chuỗi nhà thuốc uy tín hàng đầu Việt Nam']//ancestor::div[@class='container']";
+    public static final String TXT_DESCRIPTION_OVERVIEW = "";
+
+
 
     
 

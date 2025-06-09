@@ -37,6 +37,23 @@ public class HomePageTest extends BaseTest{
         BrowserHelper.isDisplayedSuccess(driver, BANNER_HEADER_TOP, 1);
     }
     
+    public void loginToTest(){
+        try {
+        BrowserHelper.isDisplayedSuccess(driver, BTN_OPEN_LOGIN_FORM, 5);
+        BrowserHelper.waitAndClickElement(driver, BTN_OPEN_LOGIN_FORM, 5);
+        BrowserHelper.waitAndSendKeyElement(driver, TXT_PHONE_INPUT, PHONE_EXISTED, 1);
+        BrowserHelper.waitAndClickElement(driver, BTN_FORM_LOGIN_SUBMIT, 5);
+        BrowserHelper.waitAndClickElement(driver,BTN_LOGIN_BY_PASSWORD, 5);
+        BrowserHelper.waitAndSendKeyElement(driver, TXT_PASSWORD_HIDDEN, PHONE_EXISTED_PASSWORD, 1);
+        BrowserHelper.waitAndClickElement(driver, BTN_PASSWORD_SUBMIT, 1);
+
+        Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        ;
+        
+    }
     public void TC02_MIDDLE_HomePage_Header(){
         BrowserHelper.waitandHoverElement(driver, ATR_DOWNLOAD_HEADER_MIDDLE, POPUP_DOWNLOAD_HEADER_MIDDLE, 5);
         homePage.checkAndChangLanguage(driver, ATR_LANGUAGE_HEADER_MIDDLE, POPUP_LANGUAGE_HEADER_MIDDLE);
@@ -56,6 +73,7 @@ public class HomePageTest extends BaseTest{
     @Test
     public void allTestHomePageFlow(){
         checkPopHomePage();
+        loginToTest();
         TC01_TOP_HomePage_Header();
         TC02_MIDDLE_HomePage_Header();
     }
