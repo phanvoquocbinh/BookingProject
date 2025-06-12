@@ -9,40 +9,44 @@ import static com.pharmacity.data.CommonData.*;
 import static com.pharmacity.locators.LoginPageLocator.*;
 import static com.pharmacity.locators.HomePageLocator.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.By;
-
+import io.qameta.allure.*;
+@Epic("Login Feature")
+@Feature("Login Work Flow")
+@Listeners({io.qameta.allure.testng.AllureTestNg.class})
 public class LoginTest extends BaseTest {
 
     public HomePage homePage;
     public LoginPage loginPage;
 
-    @BeforeEach
+    @BeforeClass
     public void setupTest() {
         setup();
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
         driver.get(URL_DEV_PAGE);
     }
-
+    @Test(priority = 1, description = "Test 1")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Access the Pharmacity website")
+    @Description("Mở và tắt banner")
     public void accessWebsite() {
-        // 1- Kiểm tra mở URL thành công hay không
-        BrowserHelper.isGetURLSuccessExcel(driver, URL_DEV_PAGE, 1, EXCEL_SHEET_NAME, 5, 5, status -> {
-        });
+        BrowserHelper.isGetURLSuccessExcel(driver, URL_DEV_PAGE, 1, EXCEL_SHEET_NAME, 5, 5, status -> {});
         BrowserHelper.sleep(1000);
-
     }
 
+    @Step("2. Kiểm tra và đóng pop-up quảng cáo")
     public void checkPopHomePage() {
-        // Kiểm tra có pop-up hay không và tắt nó
         BrowserHelper.isDisplayedSuccess(driver, BANNER_ADS, 10);
-        BrowserHelper.waitAndClickElementExcel(driver, BTN_ADS_BANNER_CLOSE, 5, EXCEL_SHEET_NAME, 6, 5,
-                status -> {
-                });
+        BrowserHelper.waitAndClickElementExcel(driver, BTN_ADS_BANNER_CLOSE, 5, EXCEL_SHEET_NAME, 6, 5, status -> {});
     }
 
+    @Step("3. Kiểm tra form đăng nhập và validate số điện thoại")
     public void checkLoginForm() {
         // 3- Mở form login thành công
         BrowserHelper.isDisplayedSuccess(driver, BTN_OPEN_LOGIN_FORM, 5);
@@ -51,6 +55,7 @@ public class LoginTest extends BaseTest {
         });
 
         // 4. Kiểm tra xem có trường thông tin phone number không
+        
         BrowserHelper.isDisplayedSuccessExcel(driver, TXT_PHONE_INPUT, 5, EXCEL_SHEET_NAME, 8, 5, status -> {
         });
 
@@ -94,7 +99,7 @@ public class LoginTest extends BaseTest {
         });
 
     }
-
+    @Step("4. Kiểm tra form Thỏa thuận người dùng (TnC)")
     public void checkTnCForm() {
         // 9. Mở form Thỏa thuận người dùng thành công
         BrowserHelper.waitAndClearElement(driver, TXT_PHONE_INPUT, 1);
@@ -136,7 +141,7 @@ public class LoginTest extends BaseTest {
         });
 
     }
-
+    @Step("5. Kiểm tra form nhập OTP")
     public void checkOTPForm() {
         // 16. Check hiển thị các nút trong request OTP Form
         driver.findElement(By.xpath("//input[@inputmode='numeric']")).getAttribute("value").equals(PHONE_NEW);
@@ -154,7 +159,7 @@ public class LoginTest extends BaseTest {
         BrowserHelper.isDisplayedSuccess(driver, FORM_LOGIN, 1);
         // loginPage.checkOTPLogic(driver,3);
     }
-
+    @Step("6. Kiểm tra form chọn phương thức login")
     public void checkLoginMethodForm() {
 
         // 18. Check login account
@@ -166,7 +171,7 @@ public class LoginTest extends BaseTest {
         BrowserHelper.isDisplayedSuccess(driver, BTN_LOGIN_BY_PASSWORD, 1);
         System.out.println("PASS 18");
     }
-
+    @Step("7. Kiểm tra login bằng mật khẩu")
     public void checkLoginByPasswordMethod() {
         // 19. Click vào nút "Login bằng password"
         BrowserHelper.waitAndClickElement(driver, BTN_LOGIN_BY_PASSWORD, 1);
@@ -190,6 +195,7 @@ public class LoginTest extends BaseTest {
         System.out.println("PASS 21");
     }
 
+    @Step("8. Kiểm tra forgot password")
     public void checkForgotPassword() {
         // 22. Kiểm tra Forgot Password
         BrowserHelper.waitAndClickElement(driver, BTN_FORGOT_PASSWORD, 1);
@@ -205,24 +211,27 @@ public class LoginTest extends BaseTest {
 
     }
 
+    @Step("9. Kiểm tra đăng nhập thành công bằng mật khẩu")
     public void checkLoginSuccessByPassword() {
         // 24. Cuối cùng: login thành công
         BrowserHelper.waitAndClickElement(driver, BTN_PASSWORD_SUBMIT, 1);
         System.out.println("PASS 24");
     }
 
-    @Test
-    public void allLoginFlow() {
-        accessWebsite();
-        checkPopHomePage();
-        checkLoginForm();
-        checkTnCForm();
-        checkOTPForm();
-        checkLoginMethodForm();
-        checkLoginByPasswordMethod();
-        checkForgotPassword();
-        checkLoginSuccessByPassword();
-    }
+    // @Test
+    // @Severity(SeverityLevel.BLOCKER)
+    // @Description("Toàn bộ flow kiểm tra đăng nhập: Từ form số điện thoại → TnC → OTP → Login thành công")
+    // public void allLoginFlow() {
+    //     accessWebsite();
+    //     checkPopHomePage();
+    //     checkLoginForm();
+    //     checkTnCForm();
+    //     checkOTPForm();
+    //     checkLoginMethodForm();
+    //     checkLoginByPasswordMethod();
+    //     checkForgotPassword();
+    //     checkLoginSuccessByPassword();
+    // }
 
     // @AfterEach
     // public void tearDownTest() {

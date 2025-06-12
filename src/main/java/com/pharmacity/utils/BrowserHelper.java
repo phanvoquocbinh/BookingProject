@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.qameta.allure.Step;
+
 import java.time.Duration;
 import java.util.Set;
 
@@ -153,7 +155,7 @@ public class BrowserHelper {
             throw e;
         }
     }
-
+    @Step("Get Locator '{xpathLocator}' ")
     public static void isDisplayedSuccess(WebDriver driver, String xpathLocator, int timeoutInSecond) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));

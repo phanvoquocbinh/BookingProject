@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest {
-    protected WebDriver driver;
+    public static WebDriver driver;;
 
     public void setup() {
         WebDriverManager.chromedriver().setup();  // Tự động tải ChromeDriver mới nhất

@@ -1,4 +1,8 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    // "java.test.config": {
+    //     "name": "Allure with AspectJ",
+    //     "vmArgs": "-javaagent:C:/Users/Binh - Soft/.m2/repository/org/aspectj/aspectjweaver/1.9.22.jar"
+    // }
 }

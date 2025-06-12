@@ -4,7 +4,7 @@ public class LoginTestData {
 
     public static final String PHONE_NEW = "0355544722";
     public static final String PHONE_EXISTED = "0916741959";
-    public static final String PHONE_EXISTED_PASSWORD = "123456789";
+    public static final String PHONE_EXISTED_PASSWORD = "12345678";
 
     // Các trường hợp invalid phone number
     public static final String PHONE_INVALID_CHAR = "0916abcdxy";

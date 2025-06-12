@@ -1,2 +1,12 @@
+com\pharmacity\data\CommonData.class
+com\pharmacity\data\LoginTestData.class
+com\pharmacity\pages\LoginPage.class
+com\pharmacity\report\AllureListener.class
+com\pharmacity\pages\HomePage.class
+com\pharmacity\utils\BrowserHelper.class
 com\pharmacity\utils\ExcelHelper.class
+com\pharmacity\utils\ScreenshotHelper.class
 com\pharmacity\base\BaseTest.class
+com\pharmacity\locators\HomePageLocator.class
+com\pharmacity\locators\LoginPageLocator.class
+com\pharmacity\utils\BrowserHelper$ExcelStatus.class

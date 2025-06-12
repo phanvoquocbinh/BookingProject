@@ -1,9 +1,11 @@
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\locators\HomePageLocator.java
+F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\report\AllureListener.java
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\utils\ExcelHelper.java
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\base\BaseTest.java
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\data\LoginTestData.java
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\pages\HomePage.java
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\pages\LoginPage.java
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\locators\LoginPageLocator.java
+F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\utils\ScreenshotHelper.java
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\data\CommonData.java
 F:\automation\Project\Pharmacity-Selenium\src\main\java\com\pharmacity\utils\BrowserHelper.java
