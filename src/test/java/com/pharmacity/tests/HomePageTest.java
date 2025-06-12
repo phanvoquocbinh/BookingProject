@@ -47,10 +47,10 @@ public class HomePageTest extends BaseTest {
     @Test(priority = 1, description = "Check popup on Home Page and close it if present")
     @Severity(SeverityLevel.NORMAL)
     @Story("Check pop-up on Home Page")
-    @Description("Mở website, kiểm tra xem pop-up có hiện không thì tắt nó")
+    @Description("Occasionally, the operations team sets up a pop-up to appear on the home page when the website is first opened. Therefore, the system will check: if the pop-up is present, it will display it; otherwise, it will close or skip it.")
     public void checkPopHomePage() {
-        this.homePage.accessWebsite();
-        this.homePage.checkPopHomePage();
+        homePage.accessWebsite();
+        homePage.checkPopHomePage();
     }
 
     @Test(priority = 2, description = "Test 2")

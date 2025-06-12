@@ -31,6 +31,7 @@ public class LoginTest extends BaseTest {
         loginPage = new LoginPage(driver);
         driver.get(URL_DEV_PAGE);
     }
+
     @Test(priority = 1, description = "Test 1")
     @Severity(SeverityLevel.NORMAL)
     @Story("Access the Pharmacity website")
@@ -40,10 +41,13 @@ public class LoginTest extends BaseTest {
         BrowserHelper.sleep(1000);
     }
 
-    @Step("2. Kiểm tra và đóng pop-up quảng cáo")
+    @Test(priority = 1, description = "Check popup on Home Page and close it if present")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Check pop-up on Home Page")
+    @Description("Occasionally, the operations team sets up a pop-up to appear on the home page when the website is first opened. Therefore, the system will check: if the pop-up is present, it will display it; otherwise, it will close or skip it.")
     public void checkPopHomePage() {
-        BrowserHelper.isDisplayedSuccess(driver, BANNER_ADS, 10);
-        BrowserHelper.waitAndClickElementExcel(driver, BTN_ADS_BANNER_CLOSE, 5, EXCEL_SHEET_NAME, 6, 5, status -> {});
+        this.homePage.accessWebsite();
+        this.homePage.checkPopHomePage();
     }
 
     @Step("3. Kiểm tra form đăng nhập và validate số điện thoại")

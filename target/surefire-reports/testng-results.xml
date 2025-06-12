@@ -2,44 +2,44 @@
 <testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-12T11:09:07 ICT" name="Surefire suite" finished-at="2025-06-12T11:09:33 ICT" duration-ms="25362">
+  <suite started-at="2025-06-12T11:49:26 ICT" name="Surefire suite" finished-at="2025-06-12T11:49:49 ICT" duration-ms="23045">
     <groups>
     </groups>
-    <test started-at="2025-06-12T11:09:07 ICT" name="Surefire test" finished-at="2025-06-12T11:09:33 ICT" duration-ms="25362">
+    <test started-at="2025-06-12T11:49:26 ICT" name="Surefire test" finished-at="2025-06-12T11:49:49 ICT" duration-ms="23045">
       <class name="com.pharmacity.tests.HomePageTest">
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:HomePageTest]" started-at="2025-06-12T11:09:07 ICT" name="setupTest" finished-at="2025-06-12T11:09:12 ICT" duration-ms="4302" status="PASS">
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:HomePageTest]" started-at="2025-06-12T11:49:26 ICT" name="setupTest" finished-at="2025-06-12T11:49:29 ICT" duration-ms="2962" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method signature="checkPopHomePage()[pri:1, instance:HomePageTest]" started-at="2025-06-12T11:09:12 ICT" name="checkPopHomePage" description="Test 1" finished-at="2025-06-12T11:09:19 ICT" duration-ms="6894" status="PASS">
+        <test-method signature="checkPopHomePage()[pri:1, instance:HomePageTest]" started-at="2025-06-12T11:49:29 ICT" name="checkPopHomePage" description="Check popup on Home Page and close it if present" finished-at="2025-06-12T11:49:35 ICT" duration-ms="5918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkPopHomePage -->
-        <test-method signature="TC01_TOP_HomePage_Header()[pri:2, instance:HomePageTest]" started-at="2025-06-12T11:09:19 ICT" name="TC01_TOP_HomePage_Header" description="Test 2" finished-at="2025-06-12T11:09:19 ICT" duration-ms="35" status="PASS">
+        <test-method signature="TC01_TOP_HomePage_Header()[pri:2, instance:HomePageTest]" started-at="2025-06-12T11:49:35 ICT" name="TC01_TOP_HomePage_Header" description="Test 2" finished-at="2025-06-12T11:49:35 ICT" duration-ms="35" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC01_TOP_HomePage_Header -->
-        <test-method signature="loginToTest()[pri:3, instance:HomePageTest]" started-at="2025-06-12T11:09:19 ICT" name="loginToTest" description="Test 3" finished-at="2025-06-12T11:09:27 ICT" duration-ms="8063" status="PASS">
+        <test-method signature="loginToTest()[pri:3, instance:HomePageTest]" started-at="2025-06-12T11:49:35 ICT" name="loginToTest" description="Test 3" finished-at="2025-06-12T11:49:43 ICT" duration-ms="8074" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToTest -->
-        <test-method signature="TC02_MIDDLE_HomePage_Header()[pri:4, instance:HomePageTest]" started-at="2025-06-12T11:09:27 ICT" name="TC02_MIDDLE_HomePage_Header" description="Test 4" finished-at="2025-06-12T11:09:32 ICT" duration-ms="5460" status="FAIL">
+        <test-method signature="TC02_MIDDLE_HomePage_Header()[pri:4, instance:HomePageTest]" started-at="2025-06-12T11:49:43 ICT" name="TC02_MIDDLE_HomePage_Header" description="Test 4" finished-at="2025-06-12T11:49:49 ICT" duration-ms="5470" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@style='position: fixed; left: 0px; top: 0px; transform: translate(164px, 88px); min-width: max-content; --radix-popper-transform-origin: 46.462501525878906px -10px; z-index: 1000; --radix-popper-available-width: 1364px; --radix-popper-available-height: 597.5999755859375px; --radix-popper-anchor-width: 94.92500305175781px; --radix-popper-anchor-height: 24px;'] (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.1.0', revision: '87802e897b'
 System info: host: 'PMCW0881', ip: '10.67.20.220', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.70, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\BINH-S~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60976}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60976/devtoo..., se:cdpVersion: 137.0.7151.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5aa8a239a77600777b5d73a15ef25890]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.70, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\BINH-S~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63752}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63752/devtoo..., se:cdpVersion: 137.0.7151.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a4d62ff911817c7a6f48baa65cf6b05a]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@style='position: fixed; left: 0px; top: 0px; transform: translate(164px, 88px); min-width: max-content; --radix-popper-transform-origin: 46.462501525878906px -10px; z-index: 1000; --radix-popper-available-width: 1364px; --radix-popper-available-height: 597.5999755859375px; --radix-popper-anchor-width: 94.92500305175781px; --radix-popper-anchor-height: 24px;'] (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.1.0', revision: '87802e897b'
 System info: host: 'PMCW0881', ip: '10.67.20.220', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.70, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\BINH-S~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60976}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60976/devtoo..., se:cdpVersion: 137.0.7151.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5aa8a239a77600777b5d73a15ef25890
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.70, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\BINH-S~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63752}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63752/devtoo..., se:cdpVersion: 137.0.7151.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a4d62ff911817c7a6f48baa65cf6b05a
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
 at com.pharmacity.utils.BrowserHelper.waitandHoverElement(BrowserHelper.java:233)

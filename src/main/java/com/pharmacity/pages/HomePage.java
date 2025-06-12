@@ -23,7 +23,8 @@ public class HomePage {
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
-    @Step ("Open website pharmacity with URL: {URL_PROD_PAGE}")
+
+    @Step ("Open website pharmacity")
     public void accessWebsite() {
         BrowserHelper.isGetURLSuccessExcel(driver, URL_PROD_PAGE, 1, EXCEL_SHEET_NAME, 5, 5, status -> {});
         BrowserHelper.sleep(1000);
