@@ -9,24 +9,13 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Surefire suite</th></tr>
-<tr><td><a href="#t0">Surefire test</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">23,045</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">89,240</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.pharmacity.tests.HomePageTest</td><td><a href="#m0">TC02_MIDDLE_HomePage_Header</a></td><td rowspan="1">1749703783821</td><td rowspan="1">5470</td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.pharmacity.tests.HomePageTest</td><td><a href="#m1">TC01_TOP_HomePage_Header</a></td><td rowspan="1">1749703775705</td><td rowspan="1">35</td></tr><tr class="passedeven"><td><a href="#m2">checkPopHomePage</a></td><td rowspan="1">1749703769627</td><td rowspan="1">5918</td></tr><tr class="passedeven"><td><a href="#m3">loginToTest</a></td><td rowspan="1">1749703775745</td><td rowspan="1">8074</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.pharmacity.tests.LoginTest</td><td><a href="#m0">InputEmailAndSubmit</a></td><td rowspan="1">1750323971167</td><td rowspan="1">69026</td></tr><tr class="passedeven"><td><a href="#m1">Login</a></td><td rowspan="1">1750323965875</td><td rowspan="1">5289</td></tr><tr class="passedeven"><td><a href="#m2">accessBookingWebsite</a></td><td rowspan="1">1750323955934</td><td rowspan="1">9458</td></tr><tr class="passedeven"><td><a href="#m3">checkPopup</a></td><td rowspan="1">1750323965553</td><td rowspan="1">310</td></tr></tbody>
 </table>
-<h2>Surefire test</h2><h3 id="m0">com.pharmacity.tests.HomePageTest#TC02_MIDDLE_HomePage_Header</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@style=&apos;position: fixed; left: 0px; top: 0px; transform: translate(164px, 88px); min-width: max-content; --radix-popper-transform-origin: 46.462501525878906px -10px; z-index: 1000; --radix-popper-available-width: 1364px; --radix-popper-available-height: 597.5999755859375px; --radix-popper-anchor-width: 94.92500305175781px; --radix-popper-anchor-height: 24px;&apos;] (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.1.0&apos;, revision: &apos;87802e897b&apos;
-System info: host: &apos;PMCW0881&apos;, ip: &apos;10.67.20.220&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.70, chrome: {chromedriverVersion: 137.0.7151.70 (dfa4dc56b2ab..., userDataDir: C:\Users\BINH-S~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63752}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63752/devtoo..., se:cdpVersion: 137.0.7151.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a4d62ff911817c7a6f48baa65cf6b05a
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.pharmacity.utils.BrowserHelper.waitandHoverElement(BrowserHelper.java:233)
-	at com.pharmacity.tests.HomePageTest.TC02_MIDDLE_HomePage_Header(HomePageTest.java:102)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.pharmacity.tests.HomePageTest#TC01_TOP_HomePage_Header</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.pharmacity.tests.HomePageTest#checkPopHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.pharmacity.tests.HomePageTest#loginToTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Surefire test</h2><h3 id="m0">com.pharmacity.tests.LoginTest#InputEmailAndSubmit</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.pharmacity.tests.LoginTest#Login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.pharmacity.tests.LoginTest#accessBookingWebsite</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.pharmacity.tests.LoginTest#checkPopup</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

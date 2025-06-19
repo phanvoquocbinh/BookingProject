@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.pharmacity.utils.BrowserHelper;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 
 import static com.pharmacity.locators.LoginPageLocator.*;
@@ -24,48 +25,27 @@ public class HomePage {
         this.driver = driver;
     }
 
-    @Step ("Open website pharmacity")
+    @Step("Open website booking")
     public void accessWebsite() {
-        BrowserHelper.isGetURLSuccessExcel(driver, URL_PROD_PAGE, 1, EXCEL_SHEET_NAME, 5, 5, status -> {});
+        BrowserHelper.isGetURLSuccess(driver, URL_PROD_BOOKING_PAGE, 1);
         BrowserHelper.sleep(1000);
     }
 
-    @Step ("Check pop-up and close it If have")
-    public void checkPopHomePage() {
-        try {
-            BrowserHelper.isDisplayedSuccess(driver, BANNER_ADS, 10);
-            BrowserHelper.waitAndClickElementExcel(driver, BTN_ADS_BANNER_CLOSE, 5, EXCEL_SHEET_NAME, 6, 5, status -> {});
-        } catch (Exception e) {
-            throw e;
-        }
-        
+    @Step("Compare the URL")
+    public void compareURL() {
+        BrowserHelper.isGetURLSuccess(driver, URL_PROD_BOOKING_PAGE, 1);
+        BrowserHelper.sleep(1000);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    public void checkAndChangLanguage(WebDriver driver, String xpathLocator, String popupLocator) {
-        BrowserHelper.isDisplayedSuccess(driver, xpathLocator, 1);
-        BrowserHelper.waitAndClickElement(driver, xpathLocator, 1);
-        BrowserHelper.isDisplayedSuccess(driver, popupLocator, 2);
-        List<WebElement> listLangButton = driver.findElements(By.xpath(LIST_BUTTON_LANGUAGE_HEADER_MIDDLE));
-        if (listLangButton.size() == 3) {
-            BrowserHelper.isDisplayedSuccess(driver, BTN_VIETNAMESE_LANGUAGE_HEADER_MIDDLE, 1);
-            BrowserHelper.isDisplayedSuccess(driver, BTN_ENGLISH_LANGUAGE_HEADER_MIDDLE, 1);
-            BrowserHelper.isDisplayedSuccess(driver, BTN_OK_LANGUAGE_HEADER_MIDDLE, 1);
-        }else{
-            System.out.println("List button đang có: " + listLangButton.size() + " nút");
+    @Step("Check the pop-up is displayed")
+    public void checkPopupHomePage() {
+        try {
+            BrowserHelper.isDisplayedSuccess(driver, ATR_POP_UP, "Pop-up Home Page", 10);
+            BrowserHelper.waitAndClickElement(driver, BTN_CLOSE_POP_UP, "Close pop-up button", 5);
+        } catch (Exception e) {
+            Allure.step("The pop-up does not existed");
         }
 
-        BrowserHelper.waitAndClickElement(driver, BTN_CLOSE_LANGUAGE_HEADER_MIDDLE, 1);
     }
 
 }

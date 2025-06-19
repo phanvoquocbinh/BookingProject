@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 
 import java.time.Duration;
@@ -44,6 +45,7 @@ public class BrowserHelper {
         }
     }
 
+
     public static void closeOpenNewTab(WebDriver driver) {
         String currentTab = driver.getWindowHandle();
         Set<String> windowHandles = driver.getWindowHandles();
@@ -67,11 +69,11 @@ public class BrowserHelper {
         }
     }
 
+
     public static void directToCurrentURL(WebDriver driver) {
         Set<String> currentURLList = driver.getWindowHandles();
         for (String urlNow : currentURLList) {
-            if (!urlNow.isEmpty())
-                ;
+            if (!urlNow.isEmpty())             
             driver.switchTo().window(urlNow);
         }
     }
@@ -101,65 +103,27 @@ public class BrowserHelper {
 
     // --------- Hàm sử dụng liên quan excel
 
-    private static void updateExcel(ExcelStatus excelStatus, String status, String sheetName, int row, int col) {
-        if (excelStatus != null) {
-            excelStatus.onStatusUpdate(status);
-            ExcelHelper excelHelper = new ExcelHelper(
-                    "F:\\automation\\Project\\Pharmacity-Selenium\\TestCase_Automation.xlsx");
-            excelHelper.updateCell(row - 1, col - 1, status, sheetName); // <-- chỉnh -1 ở đây
-        } else {
-            System.out.println("Không cập nhật Excel vì ExcelStatus = null.");
-        }
-    }
-
     public interface ExcelStatus {
         void onStatusUpdate(String status);
     }
 
     // ---------Hàm sử dụng chính
-
-    public static void isGetURLSuccessExcel(WebDriver driver, String url, int timeoutInSecond, String sheetName,
-            int row,
-            int col,
-            ExcelStatus excelStatus) {
-        try {
-            driver.get(url);
-            updateExcel(excelStatus, "PASSED", sheetName, row, col);
-        } catch (Exception e) {
-            updateExcel(excelStatus, "FAILED", sheetName, row, col);
-            handleError(e, timeoutInSecond);
-            throw e;
-        }
-    }
-
     public static void isGetURLSuccess(WebDriver driver, String url, int timeoutInSecond) {
         try {
             driver.get(url);
+            Allure.step("Open the URL: " + url);
         } catch (Exception e) {
             handleError(e, timeoutInSecond);
             throw e;
         }
     }
 
-    public static void isDisplayedSuccessExcel(WebDriver driver, String xpathLocator, int timeoutInSecond,
-            String sheetName,
-            int row, int col,
-            ExcelStatus excelStatus) {
+
+    public static void isDisplayedSuccess(WebDriver driver, String xpathLocator, String name, int timeoutInSecond) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)));
-            updateExcel(excelStatus, "PASSED", sheetName, row, col);
-        } catch (Exception e) {
-            updateExcel(excelStatus, "FAILED", sheetName, row, col);
-            handleError(e, timeoutInSecond);
-            throw e;
-        }
-    }
-    @Step("Get Locator '{xpathLocator}' ")
-    public static void isDisplayedSuccess(WebDriver driver, String xpathLocator, int timeoutInSecond) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)));
+            Allure.step("'"+ name + "'" + " element is displayed");
         } catch (Exception e) {
             handleError(e, timeoutInSecond);
             throw e;
@@ -167,26 +131,11 @@ public class BrowserHelper {
     }
 
     // -----------------------------------------
-    public static void waitAndClickElementExcel(WebDriver driver, String xpathLocator, int timeoutInSecond,
-            String sheetName,
-            int row, int col,
-            ExcelStatus excelStatus) {
+    public static void waitAndClickElement(WebDriver driver, String xpathLocator, String name, int timeoutInSecond) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator))).click();
-            ;
-            updateExcel(excelStatus, "PASSED", sheetName, row, col);
-        } catch (Exception e) {
-            updateExcel(excelStatus, "FAILED", sheetName, row, col);
-            handleError(e, timeoutInSecond);
-            throw e;
-        }
-    }
-
-    public static void waitAndClickElement(WebDriver driver, String xpathLocator, int timeoutInSecond) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator))).click();
+            Allure.step("Click to the element: " + name);
         } catch (Exception e) {
             handleError(e, timeoutInSecond);
             throw e;
@@ -195,35 +144,21 @@ public class BrowserHelper {
 
     // ----------------------------------------------
 
-    public static void waitAndSendKeyElementExcel(WebDriver driver, String xpathLocator, String keyString,
-            int timeoutInSecond,
-            String sheetName,
-            int row, int col,
-            ExcelStatus excelStatus) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator))).sendKeys(keyString);
-            updateExcel(excelStatus, "PASSED", sheetName, row, col);
-        } catch (Exception e) {
-            updateExcel(excelStatus, "FAILED", sheetName, row, col);
-            handleError(e, timeoutInSecond);
-            throw e;
-        }
-    }
-
     public static void waitAndSendKeyElement(WebDriver driver, String xpathLocator, String keyString,
             int timeoutInSecond) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator))).sendKeys(keyString);
+            Allure.step("Input the number: " + keyString);
         } catch (Exception e) {
             handleError(e, timeoutInSecond);
             throw e;
         }
     }
-    // --------------------------------------------------------------------------
 
-    public static void waitandHoverElement(WebDriver driver, String xpathLocator,String xpathPopup, int timeoutInSecond) {
+    // --------------------------------------------------------------------------
+    public static void waitandHoverElement(WebDriver driver, String xpathLocator, String xpathPopup,
+            int timeoutInSecond) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator))).isDisplayed();
@@ -231,38 +166,27 @@ public class BrowserHelper {
             Actions actions = new Actions(driver);
             actions.moveToElement(element).perform();
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathPopup))).isDisplayed();
-
+            Allure.step("Hove to the element");
         } catch (Exception e) {
             handleError(e, timeoutInSecond);
             throw e;
         }
 
+    }
+    //-------------------------------------------------------------------------
+        public static String waitAndGetText(WebDriver driver, String xpathLocator, int timeoutInSecond) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
+            String name = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator))).getText();
+            Allure.step("The text has get: " + name);
+            return name;
+        } catch (Exception e) {
+            handleError(e, timeoutInSecond);
+            throw e;
+        }
     }
 
     // -------------------------------------------------------------------------
-
-    public static void compareLengthNumberByXpathExcel(WebDriver driver, String xpathLocator, int lengthNumber,
-            int timeoutInSecond, String sheetName,
-            int row, int col,
-            ExcelStatus excelStatus) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
-            String phoneString = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)))
-                    .getAttribute("value");
-            int lengthPhone = removeSpaces(phoneString).length();
-
-            if (lengthPhone != (lengthNumber)) {
-                throw new AssertionError("So sánh text thất bại! Actual: '" + removeSpaces(phoneString)
-                        + "', Expected: '" + lengthNumber + "'");
-            }
-            updateExcel(excelStatus, "PASSED", sheetName, row, col);
-
-        } catch (Exception e) {
-            updateExcel(excelStatus, "FAILED", sheetName, row, col);
-            handleError(e, timeoutInSecond);
-            throw e;
-        }
-    }
 
     public static void compareLengthNumberByXpath(WebDriver driver, String xpathLocator, int lengthNumber,
             int timeoutInSecond) {
@@ -272,10 +196,12 @@ public class BrowserHelper {
                     .getAttribute("value");
             int lengthPhone = removeSpaces(phoneString).length();
             if (lengthPhone != (lengthNumber)) {
+                Allure.step(
+                        "Actual length number: " + lengthPhone + " not equal with Expected length: " + lengthNumber);
                 throw new AssertionError("So sánh text thất bại! Actual: '" + removeSpaces(phoneString)
                         + "', Expected: '" + lengthNumber + "'");
             }
-
+            Allure.step("Actual length number: " + lengthPhone + " equal with Expected length: " + lengthNumber);
         } catch (Exception e) {
             handleError(e, timeoutInSecond);
             throw e;
@@ -284,71 +210,27 @@ public class BrowserHelper {
 
     // ------------------------------------------------------------------------
 
-    public static void compareTextExcel(WebDriver driver, String xpathLocator, String textString, int timeoutInSecond,
-            String sheetName,
-            int row, int col,
-            ExcelStatus excelStatus) {
-
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
-            String textCurrent = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)))
-                    .getText();
-            textCurrent.equals(textString);
-            if (!textCurrent.equals(textString)) {
-                throw new AssertionError(
-                        "So sánh text thất bại! Actual: '" + textCurrent + "', Expected: '" + textString + "'");
-            }
-            updateExcel(excelStatus, "PASSED", sheetName, row, col);
-
-        } catch (Exception e) {
-            updateExcel(excelStatus, "FAILED", sheetName, row, col);
-            handleError(e, timeoutInSecond);
-            throw e;
-        }
-
-    }
-
     public static void compareText(WebDriver driver, String xpathLocator, String textString, int timeoutInSecond) {
-
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
             String textCurrent = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)))
                     .getText();
-            textCurrent.equals(textString);
-            if (!textCurrent.equals(textString)) {
-                throw new AssertionError(
-                        "So sánh text thất bại! Actual: '" + textCurrent + "', Expected: '" + textString + "'");
-            }
+            assert textCurrent.equals(textString);
+            Allure.step("Actual text: " + textCurrent + " Expected text: " + textString );
+
         } catch (Exception e) {
             handleError(e, timeoutInSecond);
             throw e;
         }
-
     }
 
     // -------------------------------------------------------------------------
-
-    public static void waitAndClearElementExcel(WebDriver driver, String xpathLocator, int timeoutInSecond,
-            String sheetName,
-            int row, int col,
-            ExcelStatus excelStatus) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator))).clear();
-            updateExcel(excelStatus, "PASSED", sheetName, row, col);
-
-        } catch (Exception e) {
-            updateExcel(excelStatus, "FAILED", sheetName, row, col);
-            handleError(e, timeoutInSecond);
-            throw e;
-        }
-    }
 
     public static void waitAndClearElement(WebDriver driver, String xpathLocator, int timeoutInSecond) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSecond));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator))).clear();
-
+            Allure.step("Clear the Element ");
         } catch (Exception e) {
             handleError(e, timeoutInSecond);
             throw e;
