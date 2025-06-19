@@ -1,4 +1,4 @@
-# Created at 2025-06-19T16:05:48.229
+# Created at 2025-06-19T17:49:19.893
 Boot Manifest-JAR contains absolute paths in classpath 'F:\automation\Project\Booking-Selenium\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 'other' has different root

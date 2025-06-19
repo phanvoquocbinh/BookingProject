@@ -3,11 +3,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.pharmacity</groupId>
-    <artifactId>Pharmacity-Selenium</artifactId>
+    <groupId>com.booking</groupId>
+    <artifactId>Booking-Selenium</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>Pharmacity-Selenium</name>
+    <name>Booking-Selenium</name>
 
     <dependencies>
         <!-- Selenium -->

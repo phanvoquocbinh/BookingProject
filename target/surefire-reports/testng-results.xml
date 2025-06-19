@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-19T16:05:50 ICT" name="Surefire suite" finished-at="2025-06-19T16:07:20 ICT" duration-ms="89240">
+  <suite started-at="2025-06-19T17:49:22 ICT" name="Surefire suite" finished-at="2025-06-19T17:50:27 ICT" duration-ms="65692">
     <groups>
     </groups>
-    <test started-at="2025-06-19T16:05:50 ICT" name="Surefire test" finished-at="2025-06-19T16:07:20 ICT" duration-ms="89240">
-      <class name="com.pharmacity.tests.LoginTest">
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:com.pharmacity.tests.LoginTest@1917d90f]" started-at="2025-06-19T16:05:51 ICT" name="setupTest" finished-at="2025-06-19T16:05:55 ICT" duration-ms="4894" status="PASS">
+    <test started-at="2025-06-19T17:49:22 ICT" name="Surefire test" finished-at="2025-06-19T17:50:27 ICT" duration-ms="65692">
+      <class name="com.booking.tests.LoginTest">
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:com.booking.tests.LoginTest@7e8a46b7]" started-at="2025-06-19T17:49:22 ICT" name="setupTest" finished-at="2025-06-19T17:49:25 ICT" duration-ms="3358" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method signature="accessBookingWebsite()[pri:1, instance:com.pharmacity.tests.LoginTest@1917d90f]" started-at="2025-06-19T16:05:55 ICT" name="accessBookingWebsite" description="Check open correct the URL" finished-at="2025-06-19T16:06:05 ICT" duration-ms="9458" status="PASS">
+        <test-method signature="accessBookingWebsite()[pri:1, instance:com.booking.tests.LoginTest@7e8a46b7]" started-at="2025-06-19T17:49:25 ICT" name="accessBookingWebsite" description="Check open correct the URL" finished-at="2025-06-19T17:49:33 ICT" duration-ms="7475" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessBookingWebsite -->
-        <test-method signature="checkPopup()[pri:2, instance:com.pharmacity.tests.LoginTest@1917d90f]" started-at="2025-06-19T16:06:05 ICT" name="checkPopup" description="Check displayed pop-up" finished-at="2025-06-19T16:06:05 ICT" duration-ms="310" status="PASS">
+        <test-method signature="checkPopup()[pri:2, instance:com.booking.tests.LoginTest@7e8a46b7]" started-at="2025-06-19T17:49:33 ICT" name="checkPopup" description="Check displayed pop-up" finished-at="2025-06-19T17:49:43 ICT" duration-ms="10521" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkPopup -->
-        <test-method signature="Login()[pri:3, instance:com.pharmacity.tests.LoginTest@1917d90f]" started-at="2025-06-19T16:06:05 ICT" name="Login" description="Check the displayed of Login button and login it" finished-at="2025-06-19T16:06:11 ICT" duration-ms="5289" status="PASS">
+        <test-method signature="Login()[pri:3, instance:com.booking.tests.LoginTest@7e8a46b7]" started-at="2025-06-19T17:49:43 ICT" name="Login" description="Check the displayed of Login button and login it" finished-at="2025-06-19T17:49:47 ICT" duration-ms="3577" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="InputEmailAndSubmit()[pri:4, instance:com.pharmacity.tests.LoginTest@1917d90f]" started-at="2025-06-19T16:06:11 ICT" name="InputEmailAndSubmit" description="Check the displayed of Login button and login it" finished-at="2025-06-19T16:07:20 ICT" duration-ms="69026" status="PASS">
+        <test-method signature="InputEmailAndSubmit()[pri:4, instance:com.booking.tests.LoginTest@7e8a46b7]" started-at="2025-06-19T17:49:47 ICT" name="InputEmailAndSubmit" description="Check the displayed of Login button and login it" finished-at="2025-06-19T17:50:27 ICT" duration-ms="40568" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- InputEmailAndSubmit -->
-      </class> <!-- com.pharmacity.tests.LoginTest -->
+      </class> <!-- com.booking.tests.LoginTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

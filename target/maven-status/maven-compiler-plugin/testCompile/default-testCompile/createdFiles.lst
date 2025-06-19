@@ -1,2 +1,2 @@
-com\pharmacity\tests\HomePageTest.class
-com\pharmacity\tests\LoginTest.class
+com\booking\tests\LoginTest.class
+com\booking\tests\HomePageTest.class
